@@ -5,15 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float moveForce = 0.001f;
+    public float moveForce = 2f;
     private Rigidbody rb;   
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            Debug.LogError("No Rigidbody attached to " + gameObject.name + ". PlayerMovement requires a Rigidbody component.");
-        }
 }
 
     // Update is called once per frame
