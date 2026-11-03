@@ -10,7 +10,7 @@ public class MouseInteractableItem : MonoBehaviour
         mr = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
+    //For this to work item needs a material with emission color selected, but starting as disabled
     void OnMouseOver()
     {
         mr.material.EnableKeyword("_EMISSION");
