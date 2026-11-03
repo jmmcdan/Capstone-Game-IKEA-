@@ -440,6 +440,7 @@ GameObject:
   - component: {fileID: 623061373}
   - component: {fileID: 623061372}
   - component: {fileID: 623061371}
+  - component: {fileID: 623061375}
   m_Layer: 0
   m_Name: Floor Item
   m_TagString: Untagged
@@ -489,6 +490,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 270e1c6f076b8304cad4e35ac3154555, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -533,6 +535,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 80, z: 0}
+--- !u!114 &623061375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623061370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e13f25a6c1ddd46a03adef93fc020a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &717181569
 GameObject:
   m_ObjectHideFlags: 0
