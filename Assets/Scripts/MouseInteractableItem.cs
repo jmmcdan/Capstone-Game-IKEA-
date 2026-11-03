@@ -9,7 +9,14 @@ public class MouseInteractableItem : MonoBehaviour
     {
         mr = GetComponent<MeshRenderer>();
     }
-
+    
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Floor Item GUI (Not added yet)");
+        }
+    }
     //For this to work item needs a material with emission color selected, but starting as disabled
     void OnMouseOver()
     {
