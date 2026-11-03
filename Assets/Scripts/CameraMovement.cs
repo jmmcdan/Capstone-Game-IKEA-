@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotationY += Input.GetAxis("Mouse X") * sensitivity;
+        //rotationY += Input.GetAxis("Mouse X") * sensitivity;
         rotationX += Input.GetAxis("Mouse Y") * -1 * sensitivity;
         transform.localEulerAngles = new Vector3(rotationX, rotationY, 0f);
     }
