@@ -5,6 +5,7 @@ using UnityEngine;
 public class EInteractableItems : MonoBehaviour
 {
         [SerializeField] private bool triggerActive = false;
+        [SerializeField] private 
 
         public void OnTriggerEnter(Collider other)
         {
