@@ -841,7 +841,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestRoom
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 526466779315415761, guid: bc9783ad06432344883280e5362521b3, type: 3}
+    - {fileID: 4298692598647725198, guid: bc9783ad06432344883280e5362521b3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
