@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/SimpleCustomEditor.uss?fileID=7433441132597879392&amp;guid=c52ce663e6bc25c4184c3bebd07ba785&amp;type=3#SimpleCustomEditor" />
+    <ui:Label text="You have 10 minutes to find your items!" class="custom-label" style="-unity-text-align: upper-center;" />
+    <ui:Button text="START TIME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Start" style="height: 43px; width: 211px; -unity-text-align: middle-center; position: relative; top: 75px; left: 125px;" />
+</ui:UXML>
