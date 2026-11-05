@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40cc83094dd5174da01f64fb9f5702b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 2
+  moveForce: 5
   sensitivity: 15
 --- !u!1 &1839256231
 GameObject:
