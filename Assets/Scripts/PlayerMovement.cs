@@ -1,40 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float moveForce = 2f;
+    public float moveSpeed = 2f;
     private Rigidbody rb;
     float rotationX = 0f;
     float rotationY = 0f;
-    public float sensitivity = 15f;
+    private Vector3 moveDirection;
+    public float sensitivity = 2f;
+    public Transform cameraTransform;
     // Update is called once per frame
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-}
+        rb.freezeRotation = true;
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        rotationY = transform.eulerAngles.y;
+    }
     // Update is called once per frame
     void Update()
     {
-        Vector3 force = Vector3.zero;
-
-        if (Input.GetKey(KeyCode.W))
-            force += transform.forward;
-        if (Input.GetKey(KeyCode.S))
-            force -= transform.forward;
-        if (Input.GetKey(KeyCode.A))
-            force -= transform.right;
-        if (Input.GetKey(KeyCode.D))
-            force += transform.right;
-
-        if (force != Vector3.zero && rb != null)
-            rb.AddForce(force.normalized * moveForce);
-
         rotationY += Input.GetAxis("Mouse X") * sensitivity;
-        //rotationX += Input.GetAxis("Mouse Y") * -1 * sensitivity;
-        transform.localEulerAngles = new Vector3(rotationX, rotationY, 0f);
+        rotationX -= Input.GetAxis("Mouse Y") * sensitivity;
+        rotationX = Mathf.Clamp(rotationX, -85f, 85f);
+
+        transform.rotation = Quaternion.Euler(0f, rotationY, 0f);
+
+        if (cameraTransform != null)
+            cameraTransform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+
+        moveDirection = Vector3.zero;
+        if (Input.GetKey(KeyCode.W)) moveDirection += transform.forward;
+        if (Input.GetKey(KeyCode.S)) moveDirection -= transform.forward;
+        if (Input.GetKey(KeyCode.D)) moveDirection += transform.right;
+        if (Input.GetKey(KeyCode.A)) moveDirection -= transform.right;
+        moveDirection = moveDirection.normalized;
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 velocity = moveDirection * moveSpeed;
+        velocity.y = rb.velocity.y;
+        rb.velocity = velocity;
     }
 }
